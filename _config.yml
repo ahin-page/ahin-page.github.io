@@ -1,0 +1,14 @@
+title: Ahin's Dev Log
+email: contact@example.com
+description: >-
+  Notes on building, shipping, and learning in public.
+baseurl: ""
+url: "https://ahin-page.github.io"
+lang: ko-KR
+timezone: Asia/Seoul
+theme: minima
+markdown: kramdown
+permalink: /:categories/:year/:month/:day/:title/
+show_excerpts: true
+header_pages:
+  - about.md

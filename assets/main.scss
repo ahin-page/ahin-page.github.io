@@ -1,0 +1,25 @@
+---
+---
+
+@import "minima";
+
+:root {
+  --page-accent: #0f766e;
+}
+
+.site-header {
+  border-top: 6px solid var(--page-accent);
+}
+
+.site-title,
+.page-link {
+  color: #0f172a;
+}
+
+.post-list-heading {
+  font-size: 1.25rem;
+}
+
+.wrapper {
+  max-width: 880px;
+}
