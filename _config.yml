@@ -1,14 +1,11 @@
-title: Ahin's Dev Log
-email: contact@example.com
+title: Ahin Lee
+email: ahin@unist.ac.kr
 description: >-
-  Notes on building, shipping, and learning in public.
+  One-page personal site for Ahin Lee built with GitHub Pages and Jekyll.
 baseurl: ""
 url: "https://ahin-page.github.io"
-lang: ko-KR
+lang: en
 timezone: Asia/Seoul
-theme: minima
 markdown: kramdown
-permalink: /:categories/:year/:month/:day/:title/
-show_excerpts: true
-header_pages:
-  - about.md
+plugins:
+  - jekyll-seo-tag

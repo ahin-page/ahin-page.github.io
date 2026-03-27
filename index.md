@@ -1,7 +1,5 @@
 ---
 layout: home
 title: Home
-list_title: Recent Posts
+description: A simple one-page profile site for Ahin.
 ---
-
-Writing about code, experiments, and things worth remembering.

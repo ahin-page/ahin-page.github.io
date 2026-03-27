@@ -1,0 +1,18 @@
+name: Ahin Lee
+role: Graduate student of Computer Science and Engineering (CSE), UNIST
+location: Ulsan, Korea
+email: ahin@unist.ac.kr
+photo: /assets/image.png
+objective: I aspire to broaden my perspective through diverse experiences. I aim to develop innovative technologies that contribute to humanity's progress and make a meaningful impact on the world.
+about:
+  - 'I am Ahin Lee (이아인), a 1st year M.S & Ph.D. student at <a href="https://sites.google.com/view/uailab/home">Ubiquitous Artificial Intelligence Laboratory (UAI LAB)</a>, advised by <a href="https://sites.google.com/site/taesikgong/">Prof. Taesik Gong</a> at <a href="https://www.unist.ac.kr/">UNIST</a>.'
+  - 'I received my B.S. in Computer Science Engineering at <a href="https://www.unist.ac.kr/">UNIST</a> in 2025.'
+interests:
+  - AI
+  - Efficient Adaptation
+  - Ubiquitous Computing
+  - Data Analysis
+  - Bioinformatics
+cv_title: cv_ahin_lee_250316.pdf
+cv_note: The CV PDF is not yet in this repository. Once it is added, this section can link to it directly.
+cv_url:

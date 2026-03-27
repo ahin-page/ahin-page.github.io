@@ -1,0 +1,10 @@
+- label: About
+  url: /#about
+- label: Publication
+  url: /#publication
+- label: Education
+  url: /#education
+- label: Experience
+  url: /#experience
+- label: More
+  url: /#more

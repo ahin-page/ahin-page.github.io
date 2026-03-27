@@ -1,0 +1,86 @@
+education:
+  - title: M.S. & Ph.D. in Computer Science and Engineering
+    organization: Ulsan National Institute of Science and Technology (UNIST)
+    period: 2025.09 - Current
+    order: 202509
+    detail: 1st year M.S. & Ph.D. student at Ubiquitous Artificial Intelligence Laboratory (UAI LAB).
+  - title: B.S. in Computer Science and Engineering
+    organization: Ulsan National Institute of Science and Technology (UNIST)
+    period: 2021 - 2025.08
+    order: 202508
+    detail: Received B.S. in Computer Science and Engineering in 2025.
+  - title: Winter Program, Python for Data Analysis and Visualization
+    organization: Technische Universität Berlin (TU Berlin)
+    period: 2025.01
+    order: 202501
+    detail: Winter School on Campus program.
+experience:
+  - title: Secure Software (S2) Lab, UNIST
+    period: Jun 2022 - Feb 2023
+    order: 202206
+    role: Research Student
+    advisor: Prof. Yuseok Jeon
+    links:
+      - label: Site
+        url: https://s2-lab.github.io/
+    details:
+      - Mobile Browser Module Security Analysis Research
+  - title: CJ AI Center
+    organization: CJ AI Center / CJ Bioscience
+    period: Feb 2024 - Aug 2024
+    order: 202402
+    role: Research Intern
+    links:
+      - label: CJ AI Center
+        url: https://aicenter.cj.net/
+      - label: CJ Bioscience
+        url: https://www.cjbioscience.com/
+    details:
+      - BGC classification
+      - Biomarker detection
+      - Drug responsiveness prediction
+  - title: Embedded Artificial Intelligence (EAI) Lab, UNIST
+    period: Sep 2024 - Nov 2024
+    order: 202409
+    role: Research Student
+    advisor: Prof. Seulki Lee
+    links:
+      - label: Site
+        url: https://sites.google.com/view/embeddedai
+    details:
+      - Distance estimation
+  - title: Ubiquitous Artificial Intelligence (UAI) Lab, UNIST
+    period: Dec 2024 - Present
+    order: 999999
+    role: M.S. & Ph.D. Student
+    advisor: Prof. Taesik Gong
+    links:
+      - label: Site
+        url: https://sites.google.com/view/uailab/home
+    details:
+      - Personalized on-device MoE LLM
+      - Tiny LLM on Jetson Board
+      - Reading paper
+skills:
+  - Python
+  - PyTorch
+  - C++
+  - C
+  - pandas
+  - SQL
+teaching:
+  - title: CSE221201 Data Structures Head TA
+    period: 2025 2nd Semester
+  - title: CSE46501 Mobile Computing Head TA
+    period: 2026 1st Semester
+other:
+  - title: CSE Supporters
+    organization: UNIST
+    period: Sep 2022 - Dec 2023, Sep 2024 - Dec 2024
+  - title: President
+    organization: CSE Supporters
+    period: Feb 2023 - Dec 2023
+awards:
+  - Updating
+patents:
+  - Updating

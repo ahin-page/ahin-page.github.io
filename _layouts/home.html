@@ -1,0 +1,159 @@
+---
+layout: default
+---
+
+{% assign profile = site.data.profile %}
+{% assign resume = site.data.resume %}
+{% assign publications = site.data.publications %}
+{% assign obfuscated_email = profile.email | replace: "@", " (at) " %}
+{% if publications %}
+  {% assign publications = publications | sort: "year" | reverse %}
+{% endif %}
+{% assign education_items = resume.education %}
+{% if education_items %}
+  {% assign education_items = education_items | sort: "order" | reverse %}
+{% endif %}
+{% assign experience_items = resume.experience %}
+{% if experience_items %}
+  {% assign experience_items = experience_items | sort: "order" | reverse %}
+{% endif %}
+{% assign teaching_items = resume.teaching %}
+{% if teaching_items %}
+  {% assign teaching_items = teaching_items | reverse %}
+{% endif %}
+{% assign other_items = resume.other %}
+{% if other_items %}
+  {% assign other_items = other_items | reverse %}
+{% endif %}
+
+<section class="intro shell" id="top">
+  <div class="intro-photo">
+    <img src="{{ profile.photo | relative_url }}" alt="{{ profile.name }} profile placeholder">
+  </div>
+  <div class="intro-copy">
+    <h1>{{ profile.name }}</h1>
+    <p class="intro-role">{{ profile.role }}</p>
+    <p class="intro-meta">
+      <span>{{ obfuscated_email }}</span>
+      <span>·</span>
+      <span>{{ profile.location }}</span>
+    </p>
+    <p>{{ profile.objective }}</p>
+  </div>
+</section>
+
+<section class="content shell" id="about">
+  <h2>About</h2>
+  {% for paragraph in profile.about %}
+  <p>{{ paragraph }}</p>
+  {% endfor %}
+  <p><strong>Interests.</strong> {{ profile.interests | join: ", " }}</p>
+</section>
+
+<section class="content shell" id="publication">
+  <h2>Publication</h2>
+  <div class="entry-list">
+    {% for item in publications %}
+    {% capture highlighted_name %}<strong class="author-highlight">{{ profile.name }}</strong>{% endcapture %}
+    {% assign author_markup = item.authors | replace: profile.name, highlighted_name %}
+    <article class="entry">
+      <h3>{{ item.title }}</h3>
+      <p>{{ author_markup }}</p>
+      <p class="muted">{{ item.venue }}</p>
+    </article>
+    {% endfor %}
+  </div>
+</section>
+
+<section class="content shell" id="education">
+  <h2>Education</h2>
+  <div class="entry-list">
+    {% for item in education_items %}
+    <article class="entry">
+      <div class="entry-head">
+        <h3>{{ item.organization }}</h3>
+        <span class="period">{{ item.period }}</span>
+      </div>
+      <p>{{ item.title }}</p>
+      <p class="muted">{{ item.detail }}</p>
+    </article>
+    {% endfor %}
+  </div>
+</section>
+
+<section class="content shell" id="experience">
+  <h2>Research Experience</h2>
+  <div class="entry-list">
+    {% for item in experience_items %}
+    <article class="entry">
+      <div class="entry-head">
+        <h3>
+          {% if item.links and item.links.size == 1 %}
+          <a href="{{ item.links[0].url }}">{{ item.title }}</a>
+          {% else %}
+          {{ item.title }}
+          {% endif %}
+        </h3>
+        <span class="period">{{ item.period }}</span>
+      </div>
+      {% if item.role or item.advisor %}
+      <p class="entry-submeta">
+        {% if item.role %}
+        <span class="entry-role">{{ item.role }}</span>
+        {% endif %}
+        {% if item.role and item.advisor %}
+        <span class="entry-divider">|</span>
+        {% endif %}
+        {% if item.advisor %}
+        <span class="advisor">Advisor: {{ item.advisor }}</span>
+        {% endif %}
+      </p>
+      {% endif %}
+      {% if item.links and item.links.size > 1 %}
+      <p class="link-row">
+        {% for link in item.links %}
+        <a href="{{ link.url }}">{{ link.label }}</a>{% unless forloop.last %} · {% endunless %}
+        {% endfor %}
+      </p>
+      {% endif %}
+      <ul>
+        {% for detail in item.details %}
+        <li>{{ detail }}</li>
+        {% endfor %}
+      </ul>
+    </article>
+    {% endfor %}
+  </div>
+</section>
+
+<section class="content shell" id="more">
+  <h2>More</h2>
+  <div class="entry-list">
+    <article class="entry">
+      <h3>Teaching</h3>
+      <ul>
+        {% for item in teaching_items %}
+        <li>{{ item.period }}: {{ item.title }}</li>
+        {% endfor %}
+      </ul>
+    </article>
+    <article class="entry">
+      <h3>Service</h3>
+      <ul>
+        {% for item in other_items %}
+        <li>{{ item.period }}: {{ item.title }}{% if item.organization %}, {{ item.organization }}{% endif %}</li>
+        {% endfor %}
+      </ul>
+    </article>
+    {% comment %}
+    <article class="entry">
+      <h3>CV</h3>
+      <p>{{ profile.cv_title }}</p>
+      <p class="muted">{{ profile.cv_note }}</p>
+      {% if profile.cv_url %}
+      <p><a href="{{ profile.cv_url | relative_url }}">Open CV</a></p>
+      {% endif %}
+    </article>
+    {% endcomment %}
+  </div>
+</section>
