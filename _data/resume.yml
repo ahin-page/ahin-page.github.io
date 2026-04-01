@@ -58,9 +58,8 @@ experience:
       - label: Site
         url: https://sites.google.com/view/uailab/home
     details:
-      - Personalized on-device MoE LLM
-      - Tiny LLM on Jetson Board
-      - Reading paper
+      - Efficient MoE Fine-Tuning
+
 skills:
   - Python
   - PyTorch
