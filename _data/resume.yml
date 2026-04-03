@@ -1,3 +1,4 @@
+# yaml-language-server: $schema=
 education:
   - title: M.S. & Ph.D. in Computer Science and Engineering
     organization: Ulsan National Institute of Science and Technology (UNIST)
@@ -32,7 +33,7 @@ experience:
     role: Research Intern
     links:
       - label: CJ AI Center
-        url: https://aicenter.cj.net/
+        url: https://www.cjolivenetworks.co.kr/business/ai_bigdata
       - label: CJ Bioscience
         url: https://www.cjbioscience.com/
     details:
