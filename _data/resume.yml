@@ -1,17 +1,17 @@
 education:
   - title: M.S. & Ph.D. in Computer Science and Engineering
     organization: Ulsan National Institute of Science and Technology (UNIST)
-    period: 2025.09 - Current
+    period: Sep 2025 - Current
     order: 202509
     detail: 1st year M.S. & Ph.D. student at Ubiquitous Artificial Intelligence Laboratory (UAI LAB).
   - title: B.S. in Computer Science and Engineering
     organization: Ulsan National Institute of Science and Technology (UNIST)
-    period: 2021 - 2025.08
+    period: 2021 - Aug 2025
     order: 202508
     detail: Received B.S. in Computer Science and Engineering in 2025.
   - title: Winter Program, Python for Data Analysis and Visualization
     organization: Technische Universität Berlin (TU Berlin)
-    period: 2025.01
+    period: Jan 2025
     order: 202501
     detail: Winter School on Campus program.
 experience:
@@ -68,7 +68,7 @@ skills:
   - pandas
   - SQL
 teaching:
-  - title: CSE221201 Data Structures Head TA
+  - title: CSE22101 Data Structures Head TA
     period: 2025 2nd Semester
   - title: CSE46501 Mobile Computing Head TA
     period: 2026 1st Semester
