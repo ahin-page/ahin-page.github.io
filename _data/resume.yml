@@ -68,9 +68,11 @@ skills:
   - pandas
   - SQL
 teaching:
-  - title: CSE22101 Data Structures Head TA
+  - title: ITP107 Introduction to AI Programming I TA
+    period: 2022 1st Semester
+  - title: CSE221 Data Structures Head TA
     period: 2025 2nd Semester
-  - title: CSE46501 Mobile Computing Head TA
+  - title: CSE465 Mobile Computing Head TA
     period: 2026 1st Semester
 other:
   - title: CSE Supporters
