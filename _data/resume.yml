@@ -82,7 +82,16 @@ other:
   - title: President
     organization: CSE Supporters
     period: Feb 2023 - Dec 2023
+  - title: Social Chair
+    display: "EIFCOM @ ACM MobiSys '26 (Social Chair)"
+    organization: EIFCOM 2026
+    url: https://eifcom26.pages.dev/
+    period: Jun 2026
 awards:
   - Updating
 patents:
-  - Updating
+  - title: Apparatus and Method for Adapter Integration for Efficient Fine-Tuning of Artificial Intelligence Models, Artificial Intelligence Model Execution System Comprising the Same, and Artificial Intelligence Model Execution Method Thereof
+    applicants: Taesik Gong, Ahin Lee, Sehyun Yun, Joonha Park
+    jurisdiction: Korea Patent
+    filing_date: 2026.06.11
+    number: 10-2026-0106289

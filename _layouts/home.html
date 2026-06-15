@@ -25,6 +25,10 @@ layout: default
 {% if other_items %}
   {% assign other_items = other_items | reverse %}
 {% endif %}
+{% assign patent_items = resume.patents %}
+{% if patent_items %}
+  {% assign patent_items = patent_items | reverse %}
+{% endif %}
 
 <section class="intro shell" id="top">
   <div class="intro-photo">
@@ -37,6 +41,10 @@ layout: default
       <span>{{ obfuscated_email }}</span>
       <span>·</span>
       <span>{{ profile.location }}</span>
+      {% if profile.linkedin %}
+      <span>·</span>
+      <a href="{{ profile.linkedin }}">LinkedIn</a>
+      {% endif %}
     </p>
     <p>{{ profile.objective }}</p>
   </div>
@@ -147,7 +155,25 @@ layout: default
       <h3>Service</h3>
       <ul>
         {% for item in other_items %}
-        <li>{{ item.period }}: {{ item.title }}{% if item.organization %}, {{ item.organization }}{% endif %}</li>
+        <li>{{ item.period }}: {% if item.display %}{% if item.url %}<a href="{{ item.url }}">{{ item.display }}</a>{% else %}{{ item.display }}{% endif %}{% else %}{{ item.title }}{% if item.organization %}, {% if item.url %}<a href="{{ item.url }}">{{ item.organization }}</a>{% else %}{{ item.organization }}{% endif %}{% endif %}{% endif %}</li>
+        {% endfor %}
+      </ul>
+    </article>
+    <article class="entry">
+      <h3>Patents</h3>
+      <ul class="patent-list">
+        {% for item in patent_items %}
+        {% capture highlighted_applicant %}<strong class="author-highlight">{{ profile.name }}</strong>{% endcapture %}
+        {% assign applicant_markup = item.applicants | replace: profile.name, highlighted_applicant %}
+        <li>
+          <strong class="patent-title">"{{ item.title }}"</strong>
+          {% if item.applicants %}
+          <p>{{ applicant_markup }}</p>
+          {% endif %}
+          {% if item.jurisdiction or item.filing_date or item.number %}
+          <p class="muted"><em>{% if item.jurisdiction %}{{ item.jurisdiction }}{% endif %}{% if item.filing_date %}; Filing date: {{ item.filing_date }}{% endif %}{% if item.number %}, No.{{ item.number }}{% endif %}</em></p>
+          {% endif %}
+        </li>
         {% endfor %}
       </ul>
     </article>
