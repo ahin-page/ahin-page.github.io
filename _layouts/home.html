@@ -28,7 +28,7 @@ layout: default
 
 <section class="intro shell" id="top">
   <div class="intro-photo">
-    <img src="{{ profile.photo | relative_url }}" alt="{{ profile.name }} profile placeholder">
+    <img src="{{ profile.photo | relative_url }}" alt="{{ profile.name }} profile photo">
   </div>
   <div class="intro-copy">
     <h1>{{ profile.name }}</h1>
@@ -57,7 +57,13 @@ layout: default
     {% capture highlighted_name %}<strong class="author-highlight">{{ profile.name }}</strong>{% endcapture %}
     {% assign author_markup = item.authors | replace: profile.name, highlighted_name %}
     <article class="entry">
-      <h3>{{ item.title }}</h3>
+      <h3>
+        {% if item.url %}
+        <a href="{{ item.url }}">{{ item.title }}</a>
+        {% else %}
+        {{ item.title }}
+        {% endif %}
+      </h3>
       <p>{{ author_markup }}</p>
       <p class="muted">{{ item.venue }}</p>
     </article>
