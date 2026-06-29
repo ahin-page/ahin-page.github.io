@@ -6,8 +6,14 @@ layout: default
 {% assign resume = site.data.resume %}
 {% assign publications = site.data.publications %}
 {% assign obfuscated_email = profile.email | replace: "@", " (at) " %}
+{% capture experience_link %}<a class="inline-journey-link" href="{{ '/countries/' | relative_url }}">diverse experiences</a>{% endcapture %}
+{% assign objective_markup = profile.objective | replace: "diverse experiences", experience_link %}
 {% if publications %}
   {% assign publications = publications | sort: "year" | reverse %}
+{% endif %}
+{% assign honor_items = resume.awards %}
+{% if honor_items %}
+  {% assign honor_items = honor_items | reverse %}
 {% endif %}
 {% assign education_items = resume.education %}
 {% if education_items %}
@@ -46,7 +52,7 @@ layout: default
       <a href="{{ profile.linkedin }}">LinkedIn</a>
       {% endif %}
     </p>
-    <p>{{ profile.objective }}</p>
+    <p>{{ objective_markup }}</p>
   </div>
 </section>
 
@@ -73,11 +79,27 @@ layout: default
         {% endif %}
       </h3>
       <p>{{ author_markup }}</p>
-      <p class="muted">{{ item.venue }}</p>
+      <p class="muted">{% if item.award %}<span class="award-badge">🏆 {{ item.award }}</span> {% endif %}{{ item.venue }}</p>
     </article>
     {% endfor %}
   </div>
 </section>
+
+{% if honor_items and honor_items.size > 0 %}
+<section class="content shell" id="honors">
+  <h2>Honors</h2>
+  <div class="entry-list">
+    {% for item in honor_items %}
+    <article class="entry">
+      <h3>{{ item.title }}</h3>
+      {% if item.organization %}
+      <p class="muted">{{ item.organization }}</p>
+      {% endif %}
+    </article>
+    {% endfor %}
+  </div>
+</section>
+{% endif %}
 
 <section class="content shell" id="education">
   <h2>Education</h2>

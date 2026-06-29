@@ -1,0 +1,91 @@
+# Add more countries by appending entries below.
+# `name` is the display label. Set `map_name` only if the GeoJSON country name differs.
+page_title: World Map
+page_intro: A visual snapshot of the places I have visited through study, research, and everyday curiosity.
+countries:
+  - name: South Korea
+    region: Asia
+    emoji: "🇰🇷"
+    theme: home
+    note: Home base in Ulsan.
+    lat: 36.5
+    lng: 127.8
+    label_dx: -18
+    label_dy: -16
+    label_anchor: end
+  - name: Germany
+    region: Europe
+    emoji: "🇩🇪"
+    note: TU Berlin Winter Program, Jan 2025.
+    lat: 51.2
+    lng: 10.4
+    label_dx: 18
+    label_dy: -16
+    label_anchor: start
+  - name: Indonesia
+    region: Asia
+    emoji: "🇮🇩"
+    lat: -2.5
+    lng: 118.0
+  - name: Kenya
+    region: Africa
+    emoji: "🇰🇪"
+    lat: 0.2
+    lng: 37.9
+  - name: Singapore
+    region: Asia
+    emoji: "🇸🇬"
+    lat: 1.35
+    lng: 103.82
+  - name: England
+    region: Europe
+    emoji: "🇬🇧"
+    lat: 52.35
+    lng: -1.17
+  - name: United States
+    map_name: USA
+    region: North America
+    emoji: "🇺🇸"
+    lat: 39.83
+    lng: -98.58
+  - name: Cambodia
+    region: Asia
+    emoji: "🇰🇭"
+    lat: 12.56
+    lng: 104.99
+  - name: China
+    region: Asia
+    emoji: "🇨🇳"
+    lat: 35.86
+    lng: 104.2
+  - name: Tanzania
+    map_name: United Republic of Tanzania
+    region: Africa
+    emoji: "🇹🇿"
+    lat: -6.37
+    lng: 34.89
+  - name: Austria
+    region: Europe
+    emoji: "🇦🇹"
+    lat: 47.52
+    lng: 14.55
+  - name: Japan
+    region: Asia
+    emoji: "🇯🇵"
+    lat: 36.2
+    lng: 138.25
+  - name: Malaysia
+    region: Asia
+    emoji: "🇲🇾"
+    lat: 4.21
+    lng: 101.98
+  - name: France
+    region: Europe
+    emoji: "🇫🇷"
+    lat: 46.23
+    lng: 2.21
+  - name: Spain
+    region: Europe
+    emoji: "🇪🇸"
+    lat: 40.46
+    lng: -3.75

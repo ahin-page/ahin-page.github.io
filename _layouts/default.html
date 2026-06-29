@@ -15,5 +15,10 @@
       {{ content }}
     </main>
     {% include site-footer.html %}
+    {% if page.page_scripts %}
+      {% for script_path in page.page_scripts %}
+    <script src="{{ script_path | relative_url }}" defer></script>
+      {% endfor %}
+    {% endif %}
   </body>
 </html>
