@@ -42,7 +42,7 @@ page_scripts:
       viewBox="0 0 1000 560"
       role="img"
       aria-labelledby="world-map-title world-map-desc"
-      data-geojson="{{ '/assets/world.geojson' | relative_url }}"
+      data-geojson="{{ '/assets/world.geojson' | relative_url }}?v={{ site.time | date: '%s' }}"
     >
       <title id="world-map-title">{{ travel.page_title }}</title>
       <desc id="world-map-desc">A world map with country boundaries, highlighted visited countries, and pinned visited places.</desc>

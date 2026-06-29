@@ -225,8 +225,13 @@ document.addEventListener("DOMContentLoaded", async () => {
       const previousPoint = pointByMapName.get(selectedMapName);
       const previousLegend = legendByMapName.get(selectedMapName);
 
-      previousFeature?.element.classed("map-country--selected", false);
-      previousPoint?.element.classed("map-micro-country--selected", false);
+      if (previousFeature) {
+        previousFeature.element.classed("map-country--selected", false);
+      }
+
+      if (previousPoint) {
+        previousPoint.element.classed("map-micro-country--selected", false);
+      }
 
       if (previousLegend) {
         previousLegend.classList.remove("map-legend-item--active");
@@ -286,8 +291,13 @@ document.addEventListener("DOMContentLoaded", async () => {
       const nextPoint = pointByMapName.get(mapName);
       const nextLegend = legendByMapName.get(mapName);
 
-      nextFeature?.element.classed("map-country--selected", true).raise();
-      nextPoint?.element.classed("map-micro-country--selected", true).raise();
+      if (nextFeature) {
+        nextFeature.element.classed("map-country--selected", true).raise();
+      }
+
+      if (nextPoint) {
+        nextPoint.element.classed("map-micro-country--selected", true).raise();
+      }
 
       if (nextLegend) {
         nextLegend.classList.add("map-legend-item--active");
@@ -328,9 +338,9 @@ function positionTooltip(tooltip, clientX, clientY) {
 
 function escapeHtml(value) {
   return String(value)
-    .replaceAll("&", "&amp;")
-    .replaceAll("<", "&lt;")
-    .replaceAll(">", "&gt;")
-    .replaceAll('"', "&quot;")
-    .replaceAll("'", "&#39;");
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#39;");
 }
