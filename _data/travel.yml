@@ -79,6 +79,11 @@ countries:
     emoji: "🇲🇾"
     lat: 4.21
     lng: 101.98
+  - name: Vietnam
+    region: Asia
+    emoji: "🇻🇳"
+    lat: 14.06
+    lng: 108.28
   - name: France
     region: Europe
     emoji: "🇫🇷"
