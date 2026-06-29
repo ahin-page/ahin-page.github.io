@@ -13,16 +13,17 @@ page_scripts:
 
 <section class="travel-hero shell">
   <div class="travel-panel">
-    <p class="travel-eyebrow">Diverse Experiences</p>
-    <h1>{{ travel.page_title }}</h1>
-    <p class="travel-intro">{{ travel.page_intro }}</p>
-    <div class="travel-stats" aria-label="Travel summary">
-      <article class="travel-stat">
-        <strong>{{ visited_count }}</strong>
-        <span>Countries visited</span>
-      </article>
+    <div class="travel-panel-copy">
+      <p class="travel-eyebrow">Diverse Experiences</p>
+      <div class="travel-heading-row">
+        <h1>{{ travel.page_title }}</h1>
+        <div class="travel-stat-pill" aria-label="Travel summary">
+          <strong>{{ visited_count }}</strong>
+          <span>Countries visited</span>
+        </div>
+      </div>
+      <p class="travel-intro">{{ travel.page_intro }}</p>
     </div>
-    <p class="travel-back-link"><a href="{{ '/' | relative_url }}">Back to home</a></p>
   </div>
 </section>
 
@@ -34,7 +35,10 @@ page_scripts:
         <button type="button" class="map-control-button" data-map-zoom="out" aria-label="Zoom out">-</button>
         <button type="button" class="map-control-button map-control-button--reset" data-map-zoom="reset">Reset</button>
       </div>
-      <p class="map-hint">Scroll to zoom, drag to move.</p>
+      <div class="map-toolbar-meta">
+        <p class="map-hint">Scroll to zoom, drag to move.</p>
+        <a class="map-back-link" href="{{ '/' | relative_url }}">Back to home</a>
+      </div>
     </div>
     <svg
       id="visited-world-map"

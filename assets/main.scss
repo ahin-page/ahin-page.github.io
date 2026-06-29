@@ -297,7 +297,7 @@ img {
 .travel-panel {
   position: relative;
   overflow: hidden;
-  padding: 2rem;
+  padding: 1.7rem 2rem;
   border: 1px solid var(--line);
   border-radius: 24px;
   background:
@@ -305,6 +305,10 @@ img {
     radial-gradient(circle at bottom left, rgba(36, 87, 197, 0.08), transparent 35%),
     linear-gradient(135deg, #ffffff 0%, #f4f8ff 100%);
   box-shadow: 0 22px 50px rgba(29, 53, 87, 0.08);
+}
+
+.travel-panel-copy {
+  max-width: 52rem;
 }
 
 .travel-eyebrow {
@@ -316,6 +320,13 @@ img {
   text-transform: uppercase;
 }
 
+.travel-heading-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 0.9rem 1.15rem;
+}
+
 .travel-panel h1 {
   margin: 0;
   font-size: clamp(2.1rem, 5vw, 3.4rem);
@@ -324,43 +335,34 @@ img {
 }
 
 .travel-intro {
-  max-width: 42rem;
+  max-width: 46rem;
   margin-top: 0.7rem;
   color: var(--muted);
   font-size: 1rem;
 }
 
-.travel-stats {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 0.9rem;
-  max-width: 26rem;
-  margin-top: 1.4rem;
-}
-
-.travel-stat {
-  padding: 0.95rem 1rem;
+.travel-stat-pill {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.55rem;
+  padding: 0.55rem 0.85rem;
   border: 1px solid rgba(36, 87, 197, 0.12);
-  border-radius: 18px;
-  background: rgba(255, 255, 255, 0.78);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.82);
+  white-space: nowrap;
 }
 
-.travel-stat strong {
+.travel-stat-pill strong {
   display: block;
-  font-size: 1.7rem;
+  font-size: 1.15rem;
   line-height: 1;
   letter-spacing: -0.04em;
 }
 
-.travel-stat span {
+.travel-stat-pill span {
   display: block;
-  margin-top: 0.3rem;
   color: var(--muted);
   font-size: 0.92rem;
-}
-
-.travel-back-link {
-  margin-top: 1.15rem;
 }
 
 .travel-map-shell {
@@ -383,6 +385,14 @@ img {
   justify-content: space-between;
   gap: 1rem;
   margin-bottom: 0.9rem;
+}
+
+.map-toolbar-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  flex-wrap: wrap;
+  justify-content: flex-end;
 }
 
 .map-controls {
@@ -416,6 +426,12 @@ img {
   margin: 0;
   color: var(--muted);
   font-size: 0.92rem;
+}
+
+.map-back-link {
+  color: var(--accent);
+  font-size: 0.92rem;
+  font-weight: 600;
 }
 
 .world-map {
@@ -652,8 +668,12 @@ img {
     padding: 1.4rem;
   }
 
-  .travel-stats {
-    grid-template-columns: 1fr;
+  .travel-heading-row {
+    align-items: flex-start;
+  }
+
+  .travel-stat-pill {
+    white-space: normal;
   }
 
   .map-frame {
@@ -663,6 +683,12 @@ img {
   .map-toolbar {
     align-items: flex-start;
     flex-direction: column;
+  }
+
+  .map-toolbar-meta {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 0.35rem;
   }
 
   .map-legend {
