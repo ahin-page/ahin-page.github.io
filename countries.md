@@ -10,6 +10,7 @@ page_scripts:
 
 {% assign travel = site.data.travel %}
 {% assign visited_count = travel.countries | size %}
+{% assign region_order = "Asia|Europe|Africa|North America|South America|Oceania" | split: "|" %}
 
 <section class="travel-hero shell">
   <div class="travel-panel">
@@ -22,7 +23,6 @@ page_scripts:
           <span>Countries visited</span>
         </div>
       </div>
-      <p class="travel-intro">{{ travel.page_intro }}</p>
     </div>
   </div>
 </section>
@@ -52,7 +52,9 @@ page_scripts:
       <desc id="world-map-desc">A world map with country boundaries, highlighted visited countries, and pinned visited places.</desc>
     </svg>
     <div class="map-legend" aria-label="Visited countries">
-      {% for country in travel.countries %}
+      {% for region_name in region_order %}
+      {% assign region_countries = travel.countries | where: "region", region_name | sort: "name" %}
+      {% for country in region_countries %}
       <article
         class="map-legend-item"
         data-country-name="{{ country.name }}"
@@ -69,6 +71,28 @@ page_scripts:
           <p>{{ country.region }}</p>
         </div>
       </article>
+      {% endfor %}
+      {% endfor %}
+      {% assign fallback_countries = travel.countries | sort: "name" %}
+      {% for country in fallback_countries %}
+      {% unless region_order contains country.region %}
+      <article
+        class="map-legend-item"
+        data-country-name="{{ country.name }}"
+        data-country-map-name="{{ country.map_name | default: country.name }}"
+        data-country-emoji="{{ country.emoji }}"
+        data-country-theme="{{ country.theme | default: '' }}"
+        tabindex="0"
+        role="button"
+        aria-pressed="false"
+      >
+        <span class="map-legend-swatch{% if country.theme == 'home' %} map-legend-swatch--home{% endif %}" aria-hidden="true"></span>
+        <div>
+          <strong>{{ country.name }}</strong>
+          <p>{{ country.region }}</p>
+        </div>
+      </article>
+      {% endunless %}
       {% endfor %}
     </div>
     <p class="map-caption">Visited countries are filled in blue. Very small countries may appear as dots. Hover to see the flag, then zoom in to inspect borders more closely.</p>
