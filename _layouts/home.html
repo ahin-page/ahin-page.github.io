@@ -91,13 +91,13 @@ layout: default
 
 <div class="page-main">
 
-<section class="content content--lead" id="about">
+<section class="content" id="about">
   <h2>About</h2>
-  <p class="objective">{{ objective_markup }}</p>
   {% for paragraph in profile.about %}
   <p>{{ paragraph }}</p>
   {% endfor %}
   <p><strong>Interests.</strong> {{ profile.interests | join: ", " }}</p>
+  <p><strong>Goal.</strong> {{ objective_markup }}</p>
 </section>
 
 <section class="content" id="publication">
