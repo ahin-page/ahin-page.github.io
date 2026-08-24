@@ -5,11 +5,12 @@ layout: default
 {% assign profile = site.data.profile %}
 {% assign resume = site.data.resume %}
 {% assign publications = site.data.publications %}
-{% assign obfuscated_email = profile.email | replace: "@", " (at) " %}
+{% assign news_items = site.data.news %}
+{% assign news_limit = 5 %}
 {% capture experience_link %}<a class="inline-journey-link" href="{{ '/countries/' | relative_url }}">diverse experiences</a>{% endcapture %}
 {% assign objective_markup = profile.objective | replace: "diverse experiences", experience_link %}
 {% if publications %}
-  {% assign publications = publications | sort: "year" | reverse %}
+  {% assign publications = publications | sort: "order" | reverse %}
 {% endif %}
 {% assign honor_items = resume.awards %}
 {% if honor_items %}
@@ -36,35 +37,70 @@ layout: default
   {% assign patent_items = patent_items | reverse %}
 {% endif %}
 
-<section class="intro shell" id="top">
-  <div class="intro-photo">
-    <img src="{{ profile.photo | relative_url }}" alt="{{ profile.name }} profile photo">
-  </div>
-  <div class="intro-copy">
+<div class="page-layout shell">
+<aside class="profile-rail" id="top">
+  <div class="rail-card profile-card">
+    <div class="profile-photo">
+      <img src="{{ profile.photo | relative_url }}" alt="{{ profile.name }} profile photo">
+    </div>
     <h1>{{ profile.name }}</h1>
-    <p class="intro-role">{{ profile.role }}</p>
-    <p class="intro-meta">
-      <span>{{ obfuscated_email }}</span>
-      <span>·</span>
-      <span>{{ profile.location }}</span>
+    <p class="profile-role">{{ profile.role }}</p>
+    {% if profile.affiliation %}
+    <p class="profile-affiliation">{{ profile.affiliation }}</p>
+    {% endif %}
+    <p class="profile-meta">
+      <span class="meta-item">
+        <svg class="meta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 21.2s6.8-5.6 6.8-11a6.8 6.8 0 1 0-13.6 0c0 5.4 6.8 11 6.8 11Z"/><circle cx="12" cy="10.1" r="2.5"/></svg>
+        {{ profile.location }}
+      </span>
+    </p>
+    <p class="profile-links">
+      <a class="icon-link" href="mailto:{{ profile.email }}" title="{{ profile.email }}" aria-label="Email {{ profile.name }}">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="2.5" y="4.5" width="19" height="15" rx="2.5"/><path d="m3.2 6.6 8.8 5.9 8.8-5.9"/></svg>
+      </a>
+      {% if profile.scholar %}
+      <a class="icon-link" href="{{ profile.scholar }}" title="Google Scholar" aria-label="Google Scholar profile">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M12 2 1 8.2l11 6.2 9-5.07V17.5h2V8.2L12 2Z"/><path d="M5 13.4v3.9L12 21.2l7-3.9v-3.9L12 17.3 5 13.4Z"/></svg>
+      </a>
+      {% endif %}
       {% if profile.linkedin %}
-      <span>·</span>
-      <a href="{{ profile.linkedin }}">LinkedIn</a>
+      <a class="icon-link" href="{{ profile.linkedin }}" title="LinkedIn" aria-label="LinkedIn profile">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM3.1 9h3.8v12H3.1V9Zm6.6 0h3.64v1.64h.05c.51-.93 1.75-1.91 3.6-1.91 3.85 0 4.56 2.44 4.56 5.62V21h-3.8v-5.5c0-1.31-.02-3-1.85-3-1.85 0-2.13 1.42-2.13 2.9V21H9.7V9Z"/></svg>
+      </a>
+      {% endif %}
+      {% if profile.cv_url %}
+      <a class="icon-link icon-link--text" href="{{ profile.cv_url | relative_url }}" title="Curriculum Vitae" aria-label="Curriculum Vitae">CV</a>
       {% endif %}
     </p>
-    <p>{{ objective_markup }}</p>
   </div>
-</section>
 
-<section class="content shell" id="about">
+  {% if news_items and news_items.size > 0 %}
+  <div class="rail-card news-card">
+    <h2>News</h2>
+    <ul class="news-list">
+      {% for item in news_items limit: news_limit %}
+      <li>
+        <span class="news-date">{{ item.date }}</span>
+        <span class="news-text">{{ item.text }}</span>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+  {% endif %}
+</aside>
+
+<div class="page-main">
+
+<section class="content content--lead" id="about">
   <h2>About</h2>
+  <p class="objective">{{ objective_markup }}</p>
   {% for paragraph in profile.about %}
   <p>{{ paragraph }}</p>
   {% endfor %}
   <p><strong>Interests.</strong> {{ profile.interests | join: ", " }}</p>
 </section>
 
-<section class="content shell" id="publication">
+<section class="content" id="publication">
   <h2>Publication</h2>
   <div class="entry-list">
     {% for item in publications %}
@@ -79,14 +115,14 @@ layout: default
         {% endif %}
       </h3>
       <p>{{ author_markup }}</p>
-      <p class="muted">{% if item.award %}<span class="award-badge">🏆 {{ item.award }}</span> {% endif %}{{ item.venue }}</p>
+      <p class="muted">{% if item.award %}<span class="award-badge">🏆 {{ item.award }}</span> {% endif %}{% if item.tier %}<span class="tier-badge"><span class="badge-emoji">🥇</span> {{ item.tier }}</span> {% endif %}{{ item.venue }}</p>
     </article>
     {% endfor %}
   </div>
 </section>
 
 {% if honor_items and honor_items.size > 0 %}
-<section class="content shell" id="honors">
+<section class="content" id="honors">
   <h2>Honors</h2>
   <div class="entry-list">
     {% for item in honor_items %}
@@ -101,7 +137,7 @@ layout: default
 </section>
 {% endif %}
 
-<section class="content shell" id="education">
+<section class="content" id="education">
   <h2>Education</h2>
   <div class="entry-list">
     {% for item in education_items %}
@@ -117,7 +153,7 @@ layout: default
   </div>
 </section>
 
-<section class="content shell" id="experience">
+<section class="content" id="experience">
   <h2>Research Experience</h2>
   <div class="entry-list">
     {% for item in experience_items %}
@@ -162,7 +198,7 @@ layout: default
   </div>
 </section>
 
-<section class="content shell" id="more">
+<section class="content" id="more">
   <h2>More</h2>
   <div class="entry-list">
     <article class="entry">
@@ -211,3 +247,6 @@ layout: default
     {% endcomment %}
   </div>
 </section>
+
+</div>
+</div>

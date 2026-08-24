@@ -49,7 +49,7 @@ img {
 }
 
 .shell {
-  width: min(860px, calc(100% - 2rem));
+  width: min(1140px, calc(100% - 2rem));
   margin: 0 auto;
 }
 
@@ -142,52 +142,222 @@ img {
   background-size: 100% 0.5em;
 }
 
-.intro {
+.page-layout {
   display: grid;
-  grid-template-columns: 172px 1fr;
-  gap: 1.5rem;
+  grid-template-columns: 320px 1fr;
+  gap: 2.5rem;
   align-items: start;
-  padding: 1rem 0 2rem;
+  padding-top: 2rem;
+}
+
+.profile-rail {
+  position: sticky;
+  top: 5.75rem;
+  display: grid;
+  gap: 1rem;
+  max-height: calc(100vh - 7.5rem);
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(36, 87, 197, 0.22) transparent;
   scroll-margin-top: 6rem;
 }
 
-.intro-photo {
-  overflow: hidden;
-  border: 1px solid var(--line);
-  border-radius: 14px;
-  background: var(--accent-soft);
+.profile-rail::-webkit-scrollbar {
+  width: 6px;
 }
 
-.intro-photo img {
+.profile-rail::-webkit-scrollbar-thumb {
+  border-radius: 999px;
+  background: rgba(36, 87, 197, 0.18);
+}
+
+.rail-card {
+  padding: 1.35rem 1.25rem;
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 14px 34px rgba(29, 53, 87, 0.06);
+}
+
+.profile-card {
+  text-align: center;
+}
+
+.profile-photo {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  margin: 0 0 1.1rem;
+  overflow: hidden;
+  border-radius: 18px;
+  background: #fff;
+}
+
+// Fade only the left and right edges into white; top and bottom stay square.
+.profile-photo::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(
+    to right,
+    #fff 0%,
+    rgba(255, 255, 255, 0) 6%,
+    rgba(255, 255, 255, 0) 94%,
+    #fff 100%
+  );
+  pointer-events: none;
+}
+
+.profile-photo img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-.intro-copy h1 {
+.profile-card h1 {
   margin: 0;
-  font-size: clamp(2.3rem, 5vw, 3.3rem);
-  line-height: 1.05;
-  letter-spacing: -0.05em;
+  font-size: 1.75rem;
+  line-height: 1.15;
+  letter-spacing: -0.035em;
 }
 
-.intro-role {
-  margin: 0.6rem 0 0;
+.profile-role {
+  margin: 0.55rem 0 0;
+  color: var(--text);
+  font-size: 0.95rem;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.profile-affiliation {
+  margin: 0.15rem 0 0;
+  color: var(--text);
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+.profile-meta {
+  display: grid;
+  justify-items: center;
+  gap: 0.2rem;
+  margin: 0.75rem 0 0;
   color: var(--muted);
+  font-size: 0.86rem;
 }
 
-.intro-meta {
+.meta-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.meta-icon {
+  width: 0.95rem;
+  height: 0.95rem;
+  flex-shrink: 0;
+  color: var(--accent);
+}
+
+.profile-links {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 0.45rem;
-  margin: 0.5rem 0 1rem;
+  margin: 0.9rem 0 0;
+}
+
+.icon-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.35rem;
+  height: 2.35rem;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--accent-soft);
+  color: var(--accent);
+  transition:
+    background 0.18s ease,
+    transform 0.18s ease;
+}
+
+.icon-link svg {
+  width: 1.15rem;
+  height: 1.15rem;
+}
+
+.icon-link--text {
+  font-size: 0.85rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+}
+
+.icon-link:hover,
+.icon-link:focus-visible {
+  background: rgba(36, 87, 197, 0.14);
+  transform: translateY(-2px);
+  text-decoration: none;
+}
+
+.news-card h2 {
+  margin: 0 0 0.85rem;
+  color: var(--accent);
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.news-list {
+  display: grid;
+  gap: 0.7rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.news-list li {
+  display: grid;
+  grid-template-columns: 3.5rem 1fr;
+  gap: 0.6rem;
+  font-size: 0.87rem;
+  line-height: 1.55;
+}
+
+.news-date {
+  color: var(--period);
+  font-size: 0.78rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  padding-top: 0.1rem;
+}
+
+.news-text {
   color: var(--muted);
+}
+
+.news-text strong {
+  color: var(--text);
+}
+
+.page-main {
+  min-width: 0;
 }
 
 .content {
   padding: 1.35rem 0 1.75rem;
   border-top: 1px solid var(--line);
   scroll-margin-top: 6rem;
+}
+
+.content--lead {
+  padding-top: 0;
+  border-top: 0;
+}
+
+.objective {
+  color: var(--muted);
 }
 
 .content h2 {
@@ -275,7 +445,8 @@ img {
   color: var(--muted);
 }
 
-.award-badge {
+.award-badge,
+.tier-badge {
   display: inline-flex;
   align-items: center;
   gap: 0.45rem;
@@ -288,6 +459,18 @@ img {
   font-size: 0.92rem;
   font-weight: 700;
   line-height: 1.2;
+}
+
+.tier-badge {
+  background: rgba(36, 87, 197, 0.11);
+  border-color: rgba(36, 87, 197, 0.26);
+  font-size: 0.86rem;
+  letter-spacing: 0.02em;
+}
+
+.badge-emoji {
+  font-size: 1.15em;
+  line-height: 1;
 }
 
 .travel-hero {
@@ -641,9 +824,27 @@ img {
   color: var(--muted);
 }
 
+@media (max-width: 980px) {
+  .page-layout {
+    grid-template-columns: 1fr;
+    gap: 1.75rem;
+    padding-top: 1.25rem;
+  }
+
+  .profile-rail {
+    position: static;
+    max-height: none;
+    overflow: visible;
+  }
+
+  .profile-photo {
+    width: 200px;
+    margin: 0 auto 1.1rem;
+  }
+}
+
 @media (max-width: 720px) {
   .site-header-inner,
-  .intro,
   .entry-head {
     display: block;
   }
@@ -652,9 +853,9 @@ img {
     margin-top: 0.75rem;
   }
 
-  .intro-photo {
-    width: 172px;
-    margin-bottom: 1rem;
+  .profile-photo {
+    width: 160px;
+    margin: 0 auto 1.1rem;
   }
 
   .travel-panel {

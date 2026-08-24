@@ -1,0 +1,16 @@
+# Newest first. `date` is shown in the left gutter, `text` may contain inline HTML links.
+# `limit` in _layouts/home.html controls how many appear in the sidebar.
+- date: 2026.08
+  text: 'Paper <strong>accepted</strong> at <strong>EMNLP 2026</strong> Main.'
+- date: 2026.06
+  text: '<a href="https://dl.acm.org/doi/10.1145/3812836.3814761">EPnG</a> received the <strong>Best Paper Award</strong> at EIFCOM 2026, co-located with ACM MobiSys &rsquo;26.'
+- date: 2026.06
+  text: 'Served as Social Chair for <a href="https://eifcom26.pages.dev/">EIFCOM 2026</a> @ ACM MobiSys &rsquo;26.'
+- date: 2026.06
+  text: 'Filed a Korea patent on adapter integration for efficient fine-tuning of AI models.'
+- date: 2026.03
+  text: 'Head TA for CSE465 Mobile Computing at UNIST.'
+- date: 2025.09
+  text: 'Started my M.S. &amp; Ph.D. at <a href="https://uai-lab.com/">UAI Lab</a>, UNIST, advised by <a href="https://sites.google.com/site/taesikgong/">Prof. Taesik Gong</a>.'
+- date: 2025.08
+  text: 'Received my B.S. in Computer Science and Engineering from UNIST.'
