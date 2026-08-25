@@ -384,10 +384,8 @@ img {
 }
 
 .entry-role {
-  font-weight: 600;
-  letter-spacing: 0.03em;
-  text-transform: uppercase;
-  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--text);
 }
 
 .entry-divider {
@@ -400,7 +398,11 @@ img {
 
 .entry-list {
   display: grid;
-  gap: 1.15rem;
+  gap: 1.6rem;
+}
+
+.entry-list--spaced {
+  gap: 2.3rem;
 }
 
 .entry p,
@@ -409,6 +411,70 @@ img {
 .content ul {
   margin-top: 0.25rem;
   margin-bottom: 0;
+}
+
+// Research Experience entries lead with a logo tile; until a real logo file is
+// supplied, `abbr` from resume.yml stands in as a monogram.
+.entry--with-logo {
+  display: grid;
+  grid-template-columns: 7.75rem 1fr;
+  gap: 1.1rem;
+  align-items: start;
+}
+
+.entry-aside {
+  display: grid;
+  justify-items: center;
+  gap: 0.5rem;
+  text-align: center;
+}
+
+.entry-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 4rem;
+  height: 4rem;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.entry-logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.entry-logo--wide {
+  width: 5.5rem;
+  border-radius: 0;
+}
+
+// Dates ride under the logo rather than opposite the title.
+.period.period--stacked {
+  color: #7b8494;
+  font-size: 0.75rem;
+  font-weight: 600;
+  line-height: 1.35;
+  white-space: nowrap;
+}
+
+.entry-monogram {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  background: var(--accent-soft);
+  color: var(--accent);
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0.03em;
+}
+
+.entry-body {
+  min-width: 0;
 }
 
 .entry-head {
@@ -847,6 +913,28 @@ img {
   .profile-photo {
     width: 160px;
     margin: 0 auto 1.1rem;
+  }
+
+  .entry--with-logo {
+    grid-template-columns: 1fr;
+    gap: 0.65rem;
+  }
+
+  .entry-aside {
+    grid-auto-flow: column;
+    align-items: center;
+    justify-content: start;
+    justify-items: start;
+    gap: 0.7rem;
+  }
+
+  .entry-logo {
+    width: 3rem;
+    height: 3rem;
+  }
+
+  .entry-logo--wide {
+    width: 4.25rem;
   }
 
   .travel-panel {

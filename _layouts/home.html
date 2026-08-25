@@ -139,15 +139,24 @@ layout: default
 
 <section class="content" id="education">
   <h2>Education</h2>
-  <div class="entry-list">
+  <div class="entry-list entry-list--spaced">
     {% for item in education_items %}
-    <article class="entry">
-      <div class="entry-head">
-        <h3>{{ item.organization }}</h3>
-        <span class="period">{{ item.period }}</span>
+    <article class="entry entry--with-logo">
+      <div class="entry-aside">
+        <div class="entry-logo{% if item.logo_wide %} entry-logo--wide{% endif %}">
+          {% if item.logo %}
+          <img src="{{ item.logo | relative_url }}" alt="{{ item.organization }} logo">
+          {% else %}
+          <span class="entry-monogram">{% if item.abbr %}{{ item.abbr }}{% else %}{{ item.organization | slice: 0, 2 }}{% endif %}</span>
+          {% endif %}
+        </div>
+        <span class="period period--stacked">{{ item.period }}</span>
       </div>
-      <p>{{ item.title }}</p>
-      <p class="muted">{{ item.detail }}</p>
+      <div class="entry-body">
+        <h3>{{ item.organization }}</h3>
+        <p>{{ item.title }}</p>
+        <p class="muted">{{ item.detail }}</p>
+      </div>
     </article>
     {% endfor %}
   </div>
@@ -155,10 +164,20 @@ layout: default
 
 <section class="content" id="experience">
   <h2>Research Experience</h2>
-  <div class="entry-list">
+  <div class="entry-list entry-list--spaced">
     {% for item in experience_items %}
-    <article class="entry">
-      <div class="entry-head">
+    <article class="entry entry--with-logo">
+      <div class="entry-aside">
+        <div class="entry-logo{% if item.logo_wide %} entry-logo--wide{% endif %}">
+          {% if item.logo %}
+          <img src="{{ item.logo | relative_url }}" alt="{{ item.title }} logo">
+          {% else %}
+          <span class="entry-monogram">{% if item.abbr %}{{ item.abbr }}{% else %}{{ item.title | slice: 0, 2 }}{% endif %}</span>
+          {% endif %}
+        </div>
+        <span class="period period--stacked">{{ item.period }}</span>
+      </div>
+      <div class="entry-body">
         <h3>
           {% if item.links and item.links.size == 1 %}
           <a href="{{ item.links[0].url }}">{{ item.title }}</a>
@@ -166,8 +185,6 @@ layout: default
           {{ item.title }}
           {% endif %}
         </h3>
-        <span class="period">{{ item.period }}</span>
-      </div>
       {% if item.role or item.advisor %}
       <p class="entry-submeta">
         {% if item.role %}
@@ -193,6 +210,7 @@ layout: default
         <li>{{ detail }}</li>
         {% endfor %}
       </ul>
+      </div>
     </article>
     {% endfor %}
   </div>

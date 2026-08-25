@@ -3,20 +3,30 @@ education:
   - title: M.S. & Ph.D. in Computer Science and Engineering
     organization: Ulsan National Institute of Science and Technology (UNIST)
     period: Sep 2025 - Present
+    abbr: UNIST
+    logo: /assets/logo-unist.png
+    logo_wide: true
     order: 202509
     detail: 1st year M.S. & Ph.D. student at Ubiquitous Artificial Intelligence Laboratory (UAI LAB).
   - title: B.S. in Computer Science and Engineering
     organization: Ulsan National Institute of Science and Technology (UNIST)
     period: Mar 2021 - Aug 2025
+    abbr: UNIST
+    logo: /assets/logo-unist.png
+    logo_wide: true
     order: 202508
     detail: Received B.S. in Computer Science and Engineering in 2025.
   - title: Winter Program, Python for Data Analysis and Visualization
     organization: Technische Universität Berlin (TU Berlin)
     period: Jan 2025
+    abbr: TUB
+    logo: /assets/logo-tuberlin.png
     order: 202501
     detail: Winter School on Campus program.
 experience:
   - title: Secure Software (S2) Lab, UNIST
+    abbr: S2
+    logo: /assets/logo-s2.png
     period: Jun 2022 - Feb 2023
     order: 202206
     role: Research Student
@@ -27,6 +37,8 @@ experience:
     details:
       - Mobile Browser Module Security Analysis Research
   - title: CJ AI Center
+    abbr: CJ
+    logo: /assets/logo-cj.png
     organization: CJ AI Center / CJ Bioscience
     period: Feb 2024 - Aug 2024
     order: 202402
@@ -41,6 +53,8 @@ experience:
       - Biomarker detection
       - Drug responsiveness prediction
   - title: Embedded Artificial Intelligence (EAI) Lab, UNIST
+    abbr: EAI
+    logo: /assets/logo-eai.png
     period: Sep 2024 - Nov 2024
     order: 202409
     role: Research Student
@@ -51,6 +65,8 @@ experience:
     details:
       - Distance estimation
   - title: Ubiquitous Artificial Intelligence (UAI) Lab, UNIST
+    abbr: UAI
+    logo: /assets/logo-uai.png
     period: Dec 2024 - Present
     order: 999999
     role: M.S. & Ph.D. Student
