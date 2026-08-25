@@ -10,7 +10,8 @@
   --line: rgba(36, 87, 197, 0.14);
   --accent: #2457c5;
   --accent-soft: #eaf1ff;
-  --brand-highlight: #d99a00;
+  --brand-primary: #3b8fca;
+  --brand-highlight: #1d3557;
   --period: #1d3557;
 }
 
@@ -72,7 +73,7 @@ img {
 }
 
 .brand {
-  color: var(--accent);
+  color: var(--brand-primary);
   font-size: 1rem;
   font-weight: 700;
   letter-spacing: -0.02em;
