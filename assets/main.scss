@@ -10,6 +10,7 @@
   --line: rgba(36, 87, 197, 0.14);
   --accent: #2457c5;
   --accent-soft: #eaf1ff;
+  --brand-highlight: #d99a00;
   --period: #1d3557;
 }
 
@@ -75,6 +76,10 @@ img {
   font-size: 1rem;
   font-weight: 700;
   letter-spacing: -0.02em;
+}
+
+.brand-highlight {
+  color: var(--brand-highlight);
 }
 
 .site-nav {
