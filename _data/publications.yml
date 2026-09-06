@@ -1,4 +1,4 @@
-- title: "Stop Wasting LoRAs: Adapter Consolidation across Experts for Parameter-Efficient MoE Fine-Tuning"
+- title: "ACE: Adapter Consolidation across Experts for Parameter-Efficient Fine-Tuning of MoE LLMs"
   authors: Ahin Lee, Sehyun Yun, Joonha Park, Taesik Gong
   venue: EMNLP 2026 Main
   tier: Top-Tier
