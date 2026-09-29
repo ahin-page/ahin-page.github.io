@@ -1,7 +1,13 @@
 # Newest first. `date` is shown in the left gutter, `text` may contain inline HTML links.
 # `limit` in _layouts/home.html controls how many appear in the sidebar.
+- date: 2026.10
+  text: 'Attending <strong>EMNLP 2026</strong> in Budapest, Hungary.'
 - date: 2026.08
-  text: 'Paper <strong>accepted</strong> at <strong>EMNLP 2026</strong> Main.'
+  text: '<a href="https://arxiv.org/abs/2609.06072">ACE</a> <strong>accepted</strong> at <strong>EMNLP 2026</strong> Main.'
+- date: 2026.07
+  text: 'Attended <strong>ICML 2026</strong> in Seoul, Korea.'
+- date: 2026.06
+  text: 'Attended <strong>ACM MobiSys 2026</strong> in Cambridge, UK.'
 - date: 2026.06
   text: '<a href="https://dl.acm.org/doi/10.1145/3812836.3814761">EPnG</a> received the <strong>Best Paper Award</strong> at EIFCOM 2026, co-located with ACM MobiSys &rsquo;26.'
 - date: 2026.06

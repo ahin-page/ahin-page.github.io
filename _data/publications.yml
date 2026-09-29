@@ -1,5 +1,12 @@
+- title: "Topic: VLA Test-time Adaptation"
+  authors: Ahin Lee, Jinwoo Seo, Youngsoo Jang, Taesik Gong
+  venue: Under Review
+  venue_short: Conference
+  year: 2026
+  order: 202699
 - title: "ACE: Adapter Consolidation across Experts for Parameter-Efficient Fine-Tuning of MoE LLMs"
   authors: Ahin Lee, Sehyun Yun, Joonha Park, Taesik Gong
+  url: https://arxiv.org/abs/2609.06072
   venue: EMNLP 2026 Main
   tier: Top-Tier
   venue_short: Conference

@@ -76,7 +76,7 @@ layout: default
 
   {% if news_items and news_items.size > 0 %}
   <div class="rail-card news-card">
-    <h2>News</h2>
+    <h2><a class="news-title-link" href="{{ '/news/' | relative_url }}">News</a></h2>
     <ul class="news-list">
       {% for item in news_items limit: news_limit %}
       <li>
@@ -85,6 +85,9 @@ layout: default
       </li>
       {% endfor %}
     </ul>
+    {% if news_items.size > news_limit %}
+    <a class="news-more-link" href="{{ '/news/' | relative_url }}">View all news &rarr;</a>
+    {% endif %}
   </div>
   {% endif %}
 </aside>
