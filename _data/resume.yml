@@ -105,6 +105,8 @@ other:
     organization: EIFCOM 2026
     url: https://eifcom26.pages.dev/
     period: Jun 2026
+reviews:
+  - venue: "ICLR '26"
 awards:
   - title: Best Paper Award
     organization: EIFCOM 2026 (co-located with MobiSys '26)

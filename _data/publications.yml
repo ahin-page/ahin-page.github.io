@@ -1,7 +1,8 @@
-- title: "Topic: VLA Test-time Adaptation"
+- title: "Adapting Vision-Language-Action Models to Unknown Visual Disruptions During Execution"
   authors: Ahin Lee, Jinwoo Seo, Youngsoo Jang, Taesik Gong
-  venue: Under Review
-  venue_short: Conference
+  url: https://arxiv.org/abs/2610.07946
+  venue: arXiv preprint arXiv:2610.07946, 2026.
+  venue_short: Preprint
   year: 2026
   order: 202699
 - title: "ACE: Adapter Consolidation across Experts for Parameter-Efficient Fine-Tuning of MoE LLMs"

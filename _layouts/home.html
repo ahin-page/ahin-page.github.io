@@ -238,6 +238,16 @@ layout: default
         {% endfor %}
       </ul>
     </article>
+    {% if resume.reviews and resume.reviews.size > 0 %}
+    <article class="entry">
+      <h3>Review</h3>
+      <ul>
+        {% for item in resume.reviews %}
+        <li>{% if item.url %}<a href="{{ item.url }}">{{ item.venue }}</a>{% else %}{{ item.venue }}{% endif %}</li>
+        {% endfor %}
+      </ul>
+    </article>
+    {% endif %}
     <article class="entry">
       <h3>Patents</h3>
       <ul class="patent-list">
