@@ -266,6 +266,10 @@ layout: default
         {% endfor %}
       </ul>
     </article>
+    <article class="entry">
+      <h3>Visitors</h3>
+      <p><a class="plain-link" href="{{ '/visitors/' | relative_url }}">Homepage views &amp; visitor map</a></p>
+    </article>
     {% comment %}
     <article class="entry">
       <h3>CV</h3>
@@ -280,4 +284,12 @@ layout: default
 </section>
 
 </div>
+</div>
+
+{% comment %} Load the counters invisibly so homepage visits are tracked; they are shown on /visitors/. {% endcomment %}
+<div class="visitor-tracker" aria-hidden="true">
+  <img src="https://hits.sh/www.ahinlee.com.svg" alt="">
+  {% if profile.mapmyvisitors_id %}
+  <script type="text/javascript" id="mapmyvisitors" src="https://mapmyvisitors.com/map.js?cl=ffffff&w=a&t=n&d={{ profile.mapmyvisitors_id }}"></script>
+  {% endif %}
 </div>

@@ -19,3 +19,5 @@ interests:
 cv_title: cv_ahin_lee_250316.pdf
 cv_note: The CV PDF is not yet in this repository. Once it is added, this section can link to it directly.
 cv_url:
+# Token from mapmyvisitors.com (the `d=` value in its map widget code); leave empty to hide the map.
+mapmyvisitors_id: 5UvqYXXA4dNY6SEL9vGOBVNbtHzkMZpz6KMj38X-Rd0
