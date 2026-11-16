@@ -47,11 +47,6 @@ countries:
     emoji: "🇺🇸"
     lat: 39.83
     lng: -98.58
-  - name: Cambodia
-    region: Asia
-    emoji: "🇰🇭"
-    lat: 12.56
-    lng: 104.99
   - name: China
     region: Asia
     emoji: "🇨🇳"
@@ -93,3 +88,8 @@ countries:
     emoji: "🇪🇸"
     lat: 40.46
     lng: -3.75
+  - name: Hungary
+    region: Europe
+    emoji: "🇭🇺"
+    lat: 47.16
+    lng: 19.5
